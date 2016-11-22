@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="lynxmotion_ssc32_driver" pkg="lynxmotion_ssc32" type="ssc32_node" output="screen">
+    <rosparam command="load" file="$(find al5d)/config/al5d.config" />
+  </node>
+</launch>
