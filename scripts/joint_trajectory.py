@@ -17,7 +17,7 @@ class JointTrajectoryDemo():
         joint_start = [0, 0, 0, 0, 0, 0]
         joint_pos1 = [-1, -0.2, -0.2, -1.1, -1, 1.5]
         joint_pos2 = [1, -0.2, -0.2, -1.1, 1, 0]
-        joint_pos3 = [0, -1, 0.5, 0.5, 0, 0]
+        joint_pos3 = [0, -0.8, 0.5, 0.5, 0, 0]
 
         # Create trajectory
         self.init_trajectory()
@@ -49,9 +49,9 @@ class JointTrajectoryDemo():
 
     def add_trajectory_point(self, start, finish):
         delta = [m - n for m, n in zip(finish, start)]
-        for i in range(200):
+        for i in range(50):
             p = JointTrajectoryPoint()
-            p.positions = [m + n / 200.0 * i for m, n in zip(start, delta)]
+            p.positions = [m + n / 50.0 * i for m, n in zip(start, delta)]
             p.time_from_start = rospy.Duration.from_sec(0.01)
             self.arm_trajectory.points.append(p)
 
