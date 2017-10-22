@@ -3,4 +3,18 @@
   <node name="lynxmotion_ssc32_driver" pkg="lynxmotion_ssc32" type="ssc32_node" output="screen">
     <rosparam command="load" file="$(find al5d)/config/al5d.config" />
   </node>
+
+  <arg name="rviz" default="false" />
+  <group if="$(arg rviz)">
+    <param name="robot_description" command="$(find xacro)/xacro.py '$(find al5d_description)/urdf/al5d.xacro'" />
+    <group ns="joint_controller">
+      <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen" />
+    </group>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find al5d_description)/urdf/urdf.rviz" />
+  </group>
+
+  <arg name="ik" default="false" />
+  <group if="$(arg ik)">
+    <node pkg="al5d" type="ik_server.py" name="ik_server" output="screen" />
+  </group>
 </launch>
