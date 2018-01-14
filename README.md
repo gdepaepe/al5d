@@ -1,4 +1,4 @@
-# ROS AL5D robot arm
+# ROS AL5D robot arm controller
 
 Manage the Lynxmotion AL5D robot arm (with medium duty wrist rotate) with ROS, with joint and cartesian coordinates (using an inverse kinematics service).
 
