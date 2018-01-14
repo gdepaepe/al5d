@@ -15,6 +15,19 @@ Manage the Lynxmotion AL5D robot arm (with medium duty wrist rotate) with ROS, w
 
 Change "baud" rate in "lynxmotion/src/ssc32_driver.cpp" to 9600 (afterwards do catkin_make). Add your username to the "dialout" group in /etc/group.
 
+Home position robot arm:
+
+           wrist-
+          =.--.--------.   elbow
+              tilt     |
+           rotate      |
+                       |
+                       .   shoulder
+                     -----
+                     | . | base
+                     -----
+
+Servos are connected to channel 0 to 5 (see al5d/config/al5d.config).
 
 
 
