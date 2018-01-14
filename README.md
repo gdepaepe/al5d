@@ -1,4 +1,4 @@
-# Project Title
+# ROS AL5D robot arm
 
 Manage the Lynxmotion AL5D robot arm (with medium duty wrist rotate) with ROS, with joint and cartesian coordinates (using an inverse kinematics service).
 
@@ -13,7 +13,7 @@ Manage the Lynxmotion AL5D robot arm (with medium duty wrist rotate) with ROS, w
 
 ### Installing
 
-Change "baud" rate in lynxmotion/src/ssc32_driver.cpp to 9600 (afterwards catkin_make). Add your username to the "dialout" group in /etc/group.
+Change "baud" rate in "lynxmotion/src/ssc32_driver.cpp" to 9600 (afterwards do catkin_make). Add your username to the "dialout" group in /etc/group.
 
 
 
